@@ -4,8 +4,7 @@ import 'package:hive/hive.dart';
 part 'Kiadasok.g.dart';
 
 @HiveType(typeId: 1, adapterName: "KiadasokAdapter")
-class Kiadasok{
-
+class Kiadasok {
   @HiveField(0)
   String date;
 
@@ -21,6 +20,10 @@ class Kiadasok{
   @HiveField(4)
   String image_path;
 
-  Kiadasok({required this.date, required this.place, required this.price, required this.kivel, required this.image_path});
-
+  Kiadasok(
+      {required this.date,
+      required this.place,
+      required this.price,
+      required this.kivel,
+      required this.image_path});
 }

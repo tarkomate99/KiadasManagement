@@ -13,6 +13,12 @@
   "contactlist" : "Contact list",
   "camera" : "Open camera",
   "upload" : "Upload",
-  "youropinion": "Share your opinion",
-  "send": "Send"
+  "youropinion": "Share your opinion!",
+  "send": "Send",
+  "add": "Expenditure add",
+  "modify" : "Expenditure modify",
+  "addopinion" : "Giving an opinion",
+  "welcome": "Welcome!",
+  "description":
+      "This is an Expense management application that allows you to track your expenses."
 }

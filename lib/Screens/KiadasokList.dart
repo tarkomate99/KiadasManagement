@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -94,8 +95,6 @@ class KiadasokListScreenState extends State<KiadasokListScreen> with TickerProvi
                 itemCount: listKiadasok.length,
                 itemBuilder: (context, position) {
                   Kiadasok getKiadas = listKiadasok[position];
-                  var date = getKiadas.date;
-                  var place = getKiadas.place;
                   return ListTile(
                     title: Text("${getKiadas.price} Ft"),
                     subtitle: Text("${getKiadas.date}"),

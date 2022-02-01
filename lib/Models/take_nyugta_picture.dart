@@ -1,6 +1,6 @@
 
 import 'dart:io';
-
+import 'dart:async';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_crud/Blocs/text_provider.dart';
@@ -43,7 +43,11 @@ class _TakeNyugtaPictureState extends State<TakeNyugtaPicture> {
     }
 
   }
-
+  Future<String> get _localPath async{
+    final dir = await getApplicationDocumentsDirectory();
+    print(dir.path);
+    return dir.path;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,28 +72,19 @@ class _TakeNyugtaPictureState extends State<TakeNyugtaPicture> {
         onPressed: ()async{
           try{
             await _initializeControllerFuture;
-
             final path = join(
-                (await getApplicationDocumentsDirectory()).path,
+              (await getApplicationDocumentsDirectory()).path,
               'nyugtaPicture.png',
             );
-
-            // final path = await getApplicationDocumentsDirectory() as String;
             final file = File(path);
-            if(file.existsSync()){
+            if (file.existsSync()) {
               file.deleteSync();
             }
-            final appdir = await getApplicationDocumentsDirectory();
             final picture = await _controller.takePicture();
-            String picpath = picture.path;
-            RegExp exp = RegExp('\/((?:.(?!\/))+\$)');
-            String? filename = exp.firstMatch(picpath)!.group(1);
             final pictureFile = File(picture.path);
             picture.saveTo(file.path);
             await pictureFile.copy(file.path);
-            textProvider.getPath(picture.path.split('/').last);
-            print(picture.path);
-            Navigator.pop(context,pictureFile);
+            Navigator.pop(context, file);
           }catch(e){
             print(e);
           }

@@ -13,6 +13,12 @@
   "contactlist" : "Névjegyzék",
   "camera" : "Kamera megnyitása",
   "upload" : "Feltöltés",
-  "youropinion": "Oszd meg a véleményed",
-  "send" : "Elküldés"
+  "youropinion": "Oszd meg a véleményed!",
+  "send" : "Elküldés",
+  "add": "Kiadás hozzáadás",
+  "modify" : "Kiadás módosítás",
+  "addopinion" : "Vélemény megadása",
+  "welcome": "Üdvözöllek!",
+  "description":
+      "Ez egy Kiadás management alkalmazás, melynek segítségével követheted a kiadásaidat."
 }
