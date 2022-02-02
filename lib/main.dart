@@ -140,6 +140,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => VelemenyekList()));
               },
+            ),
+            SizedBox(
+              height: 460,
+            ),
+            Container(
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: Column(
+                  children: <Widget>[
+                    Divider(),
+                    ListTile(
+                      title: Text('©2022, Keresztplatformos projekt'),
+                    )
+                  ],
+                ),
+              ),
             )
           ],
         ),

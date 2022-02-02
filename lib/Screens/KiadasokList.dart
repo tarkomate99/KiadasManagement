@@ -17,7 +17,8 @@ class KiadasokListScreen extends StatefulWidget {
   }
 }
 
-class KiadasokListScreenState extends State<KiadasokListScreen> with TickerProviderStateMixin{
+class KiadasokListScreenState extends State<KiadasokListScreen>
+    with TickerProviderStateMixin {
   List<Kiadasok> listKiadasok = [];
   late String imgurl;
 
@@ -28,7 +29,7 @@ class KiadasokListScreenState extends State<KiadasokListScreen> with TickerProvi
     });
   }
 
-  Future<String> get _localPath async{
+  Future<String> get _localPath async {
     final dir = await getApplicationDocumentsDirectory();
     return dir.path;
   }
@@ -39,28 +40,23 @@ class KiadasokListScreenState extends State<KiadasokListScreen> with TickerProvi
     super.initState();
   }
 
-  late final AnimationController _controller = AnimationController(
-      duration: const Duration(seconds: 2),
-      vsync: this
-  )..repeat(reverse: true);
-  late final Animation<double> _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.fastOutSlowIn
-  );
+  late final AnimationController _controller =
+      AnimationController(duration: const Duration(seconds: 2), vsync: this)
+        ..repeat(reverse: true);
+  late final Animation<double> _animation =
+      CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
     _controller.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
-    _localPath.then((String result){
+    _localPath.then((String result) {
       setState(() {
-        imgurl=result;
+        imgurl = result;
       });
     });
 
@@ -81,7 +77,6 @@ class KiadasokListScreenState extends State<KiadasokListScreen> with TickerProvi
                 },
               ),
             ),
-
           ],
         ),
         body: Container(
@@ -98,37 +93,57 @@ class KiadasokListScreenState extends State<KiadasokListScreen> with TickerProvi
                   return ListTile(
                     title: Text("${getKiadas.price} Ft"),
                     subtitle: Text("${getKiadas.date}"),
-                    onTap: () async{
+                    onTap: () async {
                       showModalBottomSheet(
                           context: context,
                           elevation: 5,
                           isScrollControlled: true,
                           builder: (_) => Container(
-                            padding: EdgeInsets.only(
-                              top: 15,
-                              left: 15,
-                              right: 15,
-                              bottom: MediaQuery.of(context).viewInsets.bottom+120,
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text("${AppLocalizations.of(context)!.expenditure}", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                                SizedBox(height: 20,),
-                                Text("${AppLocalizations.of(context)!.date}: ${getKiadas.date}"),
-                                SizedBox(height: 10,),
-                                Text("${AppLocalizations.of(context)!.place}: ${getKiadas.place}"),
-                                SizedBox(height: 10,),
-                                Text("${AppLocalizations.of(context)!.expenditure}: ${getKiadas.price} Ft"),
-                                SizedBox(height: 10,),
-                                Text("${AppLocalizations.of(context)!.withwho}: ${getKiadas.kivel}"),
-                                SizedBox(height: 10,),
-                              ],
-                            ),
-                          )
-                      );
+                                padding: EdgeInsets.only(
+                                  top: 15,
+                                  left: 15,
+                                  right: 15,
+                                  bottom:
+                                      MediaQuery.of(context).viewInsets.bottom +
+                                          120,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "${AppLocalizations.of(context)!.expenditure}",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                        "${AppLocalizations.of(context)!.date}: ${getKiadas.date}"),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                        "${AppLocalizations.of(context)!.place}: ${getKiadas.place}"),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                        "${AppLocalizations.of(context)!.expenditure}: ${getKiadas.price} Ft"),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                        "${AppLocalizations.of(context)!.withwho}: ${getKiadas.kivel}"),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                  ],
+                                ),
+                              ));
                     },
                     trailing: SizedBox(
                       width: 150,
