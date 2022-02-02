@@ -20,5 +20,9 @@ const ENGLISH_TEXTS = {
   "addopinion": "Giving an opinion",
   "welcome": "Welcome!",
   "description":
-      "This is an Expense management application that allows you to track your expenses."
+      "This is an Expense management application that allows you to track your expenses.",
+  "home": "Home Page",
+  "edition": "Total edition so far",
+  "currency": r"$",
+  "search2": "Search"
 };

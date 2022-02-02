@@ -20,5 +20,9 @@ const HUNGARIAN_TEXTS = {
   "addopinion": "Vélemény megadása",
   "welcome": "Üdvözöllek!",
   "description":
-      "Ez egy Kiadás management alkalmazás, melynek segítségével követheted a kiadásaidat."
+      "Ez egy Kiadás management alkalmazás, melynek segítségével követheted a kiadásaidat.",
+  "home": "Kezdőlap",
+  "edition": "Az eddigi kiadás összesen",
+  "currency": "Ft",
+  "search2": "Keresés"
 };

@@ -44,6 +44,10 @@ class AppLocalizations {
   String get addopinion => stringById('addopinion');
   String get welcome => stringById('welcome');
   String get description => stringById('description');
+  String get home => stringById('home');
+  String get edition => stringById('edition');
+  String get currency => stringById('currency');
+  String get search2 => stringById('search2');
 }
 
 class _AppLocalizationsDelegate

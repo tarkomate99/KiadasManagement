@@ -303,6 +303,7 @@ class AddOrUpdateKiadasState extends State<AddOrUpdateKiadas> {
                           var getPrice = controllerPrice.text;
                           var getKivel = controllerKivel.text;
                           var getImagePath = controllerImagepath.text;
+                          var total = int.parse(getPrice);
 
                           if (getDate.isNotEmpty &
                               getPlace.isNotEmpty &
@@ -322,6 +323,7 @@ class AddOrUpdateKiadasState extends State<AddOrUpdateKiadas> {
                               var box =
                                   await Hive.openBox<Kiadasok>('kiadasok');
                               box.add(kiadasokdata);
+                              text_provider.getTotal(total);
                             }
                             text_provider.getPath('');
                             text_provider.getText('');
